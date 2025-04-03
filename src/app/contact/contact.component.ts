@@ -1,15 +1,18 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	ChangeDetectorRef,
+	Component,
+	OnInit,
+} from '@angular/core';
 
-declare var data : any;
-declare var particlesJS : any;
+declare var data: any;
 
 @Component({
 	selector: 'app-contact',
 	templateUrl: './contact.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	styleUrls: ['./contact.component.css']
+	styleUrls: ['./contact.component.css'],
 })
-
 export class ContactComponent implements OnInit {
 	public contactData = data['Contact'];
 
@@ -18,7 +21,6 @@ export class ContactComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		particlesJS.load('particles-js2');
 		this.changeDetectorRef.detectChanges();
 	}
 }
