@@ -16,8 +16,8 @@ declare var data: any;
 	styleUrls: ['./task1.component.css'],
 })
 export class Task1Component implements OnInit, AfterViewInit {
-	public aboutData = data['About'];
-	public activeTab = 'story';
+	public taskData = data['Task1'];
+	public aboutData = data['about'];
 	public selector: any;
 
 	public activeElements: any = {};
@@ -30,30 +30,18 @@ export class Task1Component implements OnInit, AfterViewInit {
 		this.changeDetectorRef.detectChanges();
 	}
 	ngAfterViewInit() {
-		for (const tab of this.aboutData['NavTabs']) {
-			if (!this.activeElements[tab.id]) {
-				this.activeElements[tab.id] = document.getElementById(
-					tab.id + '-tab'
-				)!!;
-			}
-			this.activeElements[tab.id].addEventListener(
-				'click',
-				(event: any) => event.preventDefault()
+		const element = document.querySelector('.txt-bg-task');
+		if (element) {
+			(element as HTMLElement).style.setProperty(
+				'--task-number',
+				`"${this.taskData.name}"`
 			);
 		}
-
-		this.changeActiveTab(this.activeTab);
 	}
 
 	@HostListener('window:resize', ['$event'])
 	onWindowResize() {
-		this.updateSelector(this.activeTab);
-	}
-
-	public changeActiveTab(tab: string) {
-		this.updateSelector(tab);
-		this.activeTab = tab;
-		this.changeDetectorRef.detectChanges();
+		this.updateSelector('story');
 	}
 
 	public updateSelector(tab: string) {
