@@ -1,12 +1,17 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	ChangeDetectorRef,
+	Component,
+	OnInit,
+} from '@angular/core';
 
-declare var data : any;
+declare var data: any;
 
 @Component({
 	selector: 'app-quote',
 	templateUrl: './quote.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	styleUrls: ['./quote.component.css']
+	styleUrls: ['./quote.component.css'],
 })
 export class QuoteComponent implements OnInit {
 	public quoteData = this.getRandomValue(data['Quote']);
@@ -14,7 +19,7 @@ export class QuoteComponent implements OnInit {
 		changeDetectorRef.detach();
 	}
 
-	public getRandomValue(e : any) {
+	public getRandomValue(e: any) {
 		return Array.isArray(e) ? e[Math.floor(Math.random() * e.length)] : e;
 	}
 
