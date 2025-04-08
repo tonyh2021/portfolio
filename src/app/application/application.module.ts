@@ -16,7 +16,8 @@ import { SocialComponent } from '../social/social.component';
 import { FooterComponent } from '../footer/footer.component';
 import { WaifuComponent } from '../waifu/waifu.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import { Task1Component } from '../task1/task1.component';
+import { Task2Component } from '../task2/task2.component';
 const routes: Routes = [{ path: '', component: ApplicationComponent }];
 
 @NgModule({
@@ -24,6 +25,8 @@ const routes: Routes = [{ path: '', component: ApplicationComponent }];
 		ApplicationComponent,
 		HomeComponent,
 		NavbarComponent,
+		Task1Component,
+		Task2Component,
 		AboutComponent,
 		QuoteComponent,
 		PortfolioComponent,

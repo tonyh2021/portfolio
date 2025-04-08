@@ -18,7 +18,7 @@ declare var identity: any;
 export class NavbarComponent implements OnInit {
 	public navbarData = data['NavBar'];
 	public identityData = identity;
-	public activeClass: String = 'Home';
+	public activeClass: String = 'home';
 
 	private offset: any = [];
 	private offsetLink: any = [];
@@ -86,7 +86,7 @@ export class NavbarComponent implements OnInit {
 		const scroll = scrollY + 10;
 		this.sticky = scroll + 50 >= window.innerHeight;
 		let index: number = this.binarySearch(scroll);
-		this.activeClass = this.offsetLink[index];
+		this.activeClass = this.offsetLink[index].id;
 	}
 
 	@HostListener('window:resize', ['$event'])
@@ -129,7 +129,7 @@ export class NavbarComponent implements OnInit {
 		window.requestAnimationFrame(step);
 	}
 
-	updateActiveLink(navLink: String) {
+	updateActiveLink(navLink: string) {
 		if (this.firstClick) {
 			this.updateOffsetLink();
 			this.firstClick = false;
@@ -141,7 +141,7 @@ export class NavbarComponent implements OnInit {
 			t = 900;
 		}
 		setTimeout(() => {
-			let element = document.getElementById(navLink.toLowerCase());
+			let element = document.getElementById(navLink);
 			if (element) {
 				this.scrollTo(element.offsetTop);
 			}
@@ -151,7 +151,7 @@ export class NavbarComponent implements OnInit {
 	public updateOffsetLink() {
 		for (let index = 0; index < this.size; index++) {
 			let element = document.getElementById(
-				this.navbarData['links'][index].toLowerCase()
+				this.navbarData['links'][index].id
 			);
 			if (element) {
 				this.offset[index] = element.offsetTop;

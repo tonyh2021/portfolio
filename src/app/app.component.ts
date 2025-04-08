@@ -1,13 +1,16 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 
+declare var identity: any;
+declare var data: any;
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements AfterViewInit, OnInit {
-	title = "Jayant Goel (JayantGoel001)'s Personal Portfolio";
+	public identityData = identity;
+	public linkData = data['Links'];
 
 	constructor(private swUpdate: SwUpdate) {}
 	ngOnInit() {
@@ -27,11 +30,11 @@ export class AppComponent implements AfterViewInit, OnInit {
 		link.setAttribute('href', document.URL);
 		document.head.appendChild(link);
 
-		console.log(`%c${this.title}`, 'color:#F56540; font-size:27px');
 		console.log(
-			'%chttps://github.com/JayantGoel001/JayantGoel001.github.io',
-			'font-size:17px'
+			`%c${this.identityData['name']}`,
+			'color:#F56540; font-size:27px'
 		);
+		console.log(`%c${this.linkData.GitHub.link}`, 'font-size:17px');
 	}
 
 	ngAfterViewInit(): void {

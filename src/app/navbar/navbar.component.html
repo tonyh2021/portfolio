@@ -7,9 +7,7 @@
 		<h1>
 			<ng-template #title
 				><strong
-					><em
-						>{{ navbarData["name"] }}'s Personal Portfolio</em
-					></strong
+					><em>{{ navbarData["name"] }}</em></strong
 				></ng-template
 			><a
 				rel="noreferrer"
@@ -81,7 +79,7 @@
 				<li
 					*ngFor="let navLink of navbarData['links']"
 					class="nav-link pointer"
-					[ngClass]="{ active: navLink === activeClass }"
+					[ngClass]="{ active: navLink.id === activeClass }"
 				>
 					<ng-template #title
 						><strong>
@@ -89,12 +87,12 @@
 						</strong></ng-template
 					><a
 						href="/"
-						(click)="updateActiveLink(navLink)"
+						(click)="updateActiveLink(navLink.id)"
 						(scroll)="onWindowScroll()"
 						[attr.aria-label]="[navLink]"
 						placement="bottom"
 						[ngbTooltip]="title"
-						>{{ navLink }}</a
+						>{{ navLink.name }}</a
 					>
 				</li>
 			</ul>
