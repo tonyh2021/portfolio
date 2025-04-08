@@ -1,22 +1,29 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 	{
 		path: '404',
-		loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+		loadChildren: () =>
+			import('./page-not-found/page-not-found.module').then(
+				(m) => m.PageNotFoundModule
+			),
 	},
 	{
 		path: '',
-		loadChildren: () => import('./application/application.module').then(m => m.ApplicationModule)
-	},{
-		path : '**',
-		redirectTo : '/404'
-	}
+		loadChildren: () =>
+			import('./application/application.module').then(
+				(m) => m.ApplicationModule
+			),
+	},
+	{
+		path: '**',
+		redirectTo: '/404',
+	},
 ];
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule],
-	providers: []
+	providers: [],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
