@@ -10,13 +10,13 @@ import {
 declare var data: any;
 
 @Component({
-	selector: 'app-task2',
-	templateUrl: './task2.component.html',
+	selector: 'app-task4',
+	templateUrl: './task4.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	styleUrls: ['./task2.component.css'],
+	styleUrls: ['./task4.component.css'],
 })
-export class Task2Component implements OnInit, AfterViewInit {
-	public taskData = data['Task2'];
+export class Task4Component implements OnInit, AfterViewInit {
+	public taskData = data['Task4'];
 	public selector: any;
 
 	public activeElements: any = {};

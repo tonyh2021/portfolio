@@ -17,7 +17,6 @@ declare var data: any;
 })
 export class Task1Component implements OnInit, AfterViewInit {
 	public taskData = data['Task1'];
-	public aboutData = data['about'];
 	public selector: any;
 
 	public activeElements: any = {};
