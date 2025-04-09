@@ -23,6 +23,10 @@ small {
 	}
 }
 
+.task-title {
+	max-width: 80%;
+}
+
 .task-img img {
 	max-width: 350px;
 }
