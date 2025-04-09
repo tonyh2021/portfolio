@@ -24,12 +24,12 @@ small {
 }
 
 .task-img img {
-	width: 100%;
+	max-width: 350px;
 }
 
 .timeline {
 	position: relative;
-	width: 120%;
+	width: 100%;
 }
 
 .timeline-box {
@@ -95,6 +95,9 @@ small {
 @media (min-width: 200px) and (max-width: 768px) {
 	#task {
 		background-size: 55%;
+	}
+	.task-img img {
+		margin-bottom: 30px;
 	}
 	.task-section {
 		flex-direction: column;
