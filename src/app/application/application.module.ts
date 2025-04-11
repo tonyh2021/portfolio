@@ -6,7 +6,6 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { ApplicationComponent } from './application.component';
 import { HomeComponent } from '../home/home.component';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { ContactComponent } from '../contact/contact.component';
 import { SocialComponent } from '../social/social.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -29,7 +28,6 @@ const routes: Routes = [{ path: '', component: ApplicationComponent }];
 		Task4Component,
 		Task5Component,
 		Task6Component,
-		ContactComponent,
 		SocialComponent,
 		FooterComponent,
 	],
