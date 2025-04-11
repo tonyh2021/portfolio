@@ -1,22 +1,20 @@
 {
-	"name": "jayantgoel001.github.io",
+	"name": "flare-medfm.github.io",
 	"version": "2.0.0",
-	"description": "Jayant Goel (JayantGoel001)'s Personal Portfolio",
+	"description": "Flare 2025",
 	"main": "index.js",
-	"author": "Jayant Goel",
+	"author": "Flare 2025",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/JayantGoel001/JayantGoel001.github.io/issues"
+		"url": "https://github.com/flare-medfm/flare-medfm.github.io/issues"
 	},
 	"keywords": [
-		"Jayant",
-		"Jayant Goel",
-		"Jayant Goel Portfolio",
-		"JayantGoel001",
-		"Jayant Goel (JayantGoel001)'s Personal Portfolio"
+		"Flare",
+		"Flare 2025",
+		"MICCAI FLARE 2025"
 	],
-	"repository": "https://github.com/JayantGoel001/JayantGoel001.github.io",
-	"homepage": "https://JayantGoel001.github.io",
+	"repository": "https://github.com/flare-medfm/flare-medfm.github.io",
+	"homepage": "https://flare-medfm.github.io",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
